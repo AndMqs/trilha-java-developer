@@ -1,8 +1,5 @@
 package negocio;
 
-import java.text.SimpleDateFormat;
-import java.util.TimeZone;
-
 import dominio.Conta;
 import interfaces.Operacoes;
 
@@ -41,12 +38,8 @@ public class TransacaoHelper implements Operacoes{
 
     @Override
     public void exibirDadosBancarios(Conta conta) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-		
 		System.out.println("Nome: " + conta.getCliente().getNome());
 		System.out.println("CPF: " + conta.getCliente().getCpf());
-		System.out.println("Data de Nascimento: " + simpleDateFormat.format(conta.getCliente().getDataNascimento()));
 		System.out.println("Banco: " + conta.getNome());
 		System.out.println("Agência: " + conta.getCodigo());
 		System.out.println("Nº da Conta: " + conta.getNumero());

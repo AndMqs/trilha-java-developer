@@ -13,7 +13,7 @@ public class Instituicao {
 
     public Instituicao(){
         this.nome = "Start Bank";
-        this.cnpj = "";
+        this.cnpj = "524198/0001";
         this.codigo = "0001";
     }
 

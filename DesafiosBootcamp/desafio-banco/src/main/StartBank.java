@@ -1,7 +1,6 @@
 package main;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,8 +13,6 @@ public class StartBank {
     
     public static void main(String[] args) throws ParseException {
         
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
         TransacaoHelper transacaoHelper = new TransacaoHelper();
     
         List<Conta> contas = new ArrayList<Conta>();
@@ -68,12 +65,6 @@ public class StartBank {
                         System.out.print("Informe o CPF da pessoa: ");
                         c1.getCliente().setCpf(teclado.nextLine());
                         
-                        System.out.print("Informe a data de nascimento da pessoa: ");
-                        String dataNascimento = teclado.nextLine();
-                        
-                        if(!dataNascimento.isEmpty()) {
-                            c1.getCliente().setDataNascimento(simpleDateFormat.parse(dataNascimento));
-                        }
                         
                         if(ValidacaoHelper.isPossivelCadastrarConta(c1)) {
                             contas.add(c1);
@@ -209,9 +200,6 @@ public class StartBank {
                 } 
 
             } while(!sair);
-
-        } catch (ParseException e) {
-            e.printStackTrace();
 
         } finally {
             teclado.close();

@@ -35,12 +35,6 @@ public class ValidacaoHelper {
 		}
 		
 		
-		if(conta.getCliente().getDataNascimento() == null) {
-			System.out.println("Data de Nascimento não foi preenchido.");
-			
-			return false;
-		}
-		
 		if(conta.getNumero().isEmpty()) {
 			System.out.println("Nº da Conta não foi preenchido.");
 			
